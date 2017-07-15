@@ -1,0 +1,1 @@
+reject tcp any any -> any any (msg:"Enterprise Mode-TCP"; sid:2001; rev:1;)

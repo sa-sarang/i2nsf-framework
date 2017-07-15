@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<I2NSF><Policy_web><Rule_id>2</Rule_id><Rule_name>block_goole</Rule_name><Position>Staff</Position><Web>google</Web><Start_time>04:00</Start_time><End_time>22:00</End_time><Action>reject</Action></Policy_web></I2NSF>
