@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+<capabilities>
+ <capability>urn:ietf:params:netconf:base:1.0</capability>
+</capabilities>
+</hello>
+]]>]]>
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc message-id="1" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+<edit-config>
+ <target>
+  <running />
+  </target>
+  <config>
+  <policy xmlns="http://skku.com/iot/example/ietf-i2nsf-capability-interface" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+   <rules nc:operation="create">
+    <rule-id>130</rule-id>
+     <rule-name>test</rule-name>
+     <condition>
+     <packet-security-condition>
+      <packet-security-ipv4-condition>
+       <pkt-sec-cond-ipv4-src>10.0.0.1</pkt-sec-cond-ipv4-src>
+        <pkt-sec-cond-ipv4-src>10.0.0.2</pkt-sec-cond-ipv4-src>
+        <pkt-sec-cond-ipv4-src>10.0.0.3</pkt-sec-cond-ipv4-src>
+        <pkt-sec-cond-ipv4-src>10.0.0.4</pkt-sec-cond-ipv4-src>
+        <pkt-sec-cond-ipv4-src>10.0.0.5</pkt-sec-cond-ipv4-src>
+        <pkt-sec-cond-ipv4-src>10.0.0.6</pkt-sec-cond-ipv4-src>
+        <pkt-sec-cond-ipv4-src>10.0.0.7</pkt-sec-cond-ipv4-src>
+        <pkt-sec-cond-ipv4-src>10.0.0.8</pkt-sec-cond-ipv4-src>
+        <pkt-sec-cond-ipv4-src>10.0.0.9</pkt-sec-cond-ipv4-src>
+        <pkt-sec-cond-ipv4-dest>31.13.68.35</pkt-sec-cond-ipv4-dest>
+      </packet-security-ipv4-condition>
+      </packet-security-condition>
+      <generic-context-condition>
+      <schedule>
+       <start-time>11:00</start-time>
+        <end-time>18:00</end-time>
+       </schedule>
+     </generic-context-condition>
+     </condition>
+     <action>
+     <action-type>
+      <ingress-action>
+       <ingress-action-type>
+        <reject>true</reject>
+        </ingress-action-type>
+      </ingress-action>
+      </action-type>
+    </action>
+    </rules>
+  </policy>
+  </config>
+</edit-config>
+</rpc>
+]]>]]>
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc message-id="2" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+<close-session />
+</rpc>
+]]>]]>

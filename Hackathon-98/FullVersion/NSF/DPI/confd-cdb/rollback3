@@ -1,0 +1,12 @@
+# Created by: admin
+# Date: 2016-11-12 17:48:16
+# Via: netconf
+# Type: delta
+# Label: 
+# Comment: 
+# No: 10144
+
+policy {
+    delete:
+    voip-volte-rule SIP_Block;
+}

@@ -1,0 +1,12 @@
+# Created by: admin
+# Date: 2016-11-12 16:34:31
+# Via: netconf
+# Type: delta
+# Label: 
+# Comment: 
+# No: 10139
+
+policy {
+    delete:
+    voip-volte-rule DPI_Default_Blacklist;
+}
