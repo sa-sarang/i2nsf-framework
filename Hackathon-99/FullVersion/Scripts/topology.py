@@ -13,6 +13,7 @@ from mininet.link import Link
 from mininet.log import setLogLevel, info
 
 import os
+import MySQLdb
 
 class SingleSwitchTopo(Topo):
 	"Single switch connected to n hosts."
@@ -125,7 +126,16 @@ def simpleTest():
 	admin.cmd('sudo service apache2 stop >> /tmp/webserver.out');
 	admin.cmd('sudo service apache2 start >> /tmp/webserver.out');
 	admin.cmd('sudo python server.py >> /tmp/webserver.out &');
+        str_exe_enterprise = "truncate table Policy_enterprise;"
+        db = MySQLdb.connect(host="localhost", user="root", passwd="secu", db="I2NSF")
+        cur = db.cursor()
+        cur.execute(str_exe_enterprise)
 
+        str_exe_web = "truncate table Policy_web;"
+        db = MySQLdb.connect(host="localhost", user="root", passwd="secu", db="I2NSF")
+        cur = db.cursor()
+        cur.execute(str_exe_web)
+        db.close()
 
 	staff_1.cmd( 'sudo route add default gw', '10.0.0.100')
 	staff_2.cmd( 'sudo route add default gw', '10.0.0.100')
